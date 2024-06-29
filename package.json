@@ -1,0 +1,16 @@
+{
+  "name": "db-auto-filler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "mysql2": "^3.10.1",
+    "pg": "^8.12.0"
+  }
+}
