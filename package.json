@@ -2,15 +2,17 @@
   "name": "db-auto-filler",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "commonjs",
+  "exports": "./index.js",
+  "type": "module",
   "scripts": {},
   "keywords": [],
-  "author": "",
+  "author": "Muslim Omar <mislimumer@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
+    "inquirer": "^9.3.4",
     "mysql2": "^3.10.1",
     "pg": "^8.12.0"
-  }
+  },
+  "repository": "git@github.com:muslemomar/db-auto-filler.git"
 }
