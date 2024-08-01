@@ -24,6 +24,9 @@ const getDatabaseCredentials = async () => {
     const credentials = {};
 
     if (isDebugMode) {
+        /*
+        * You can put your database credentials here if you want to run the script in debug mode.
+        * */
         global.dbType = 'mysql';
         global.databaseName = 'db_auto_filler';
         global.rowsToInsert = Number(process.argv[2]) || 1;
@@ -57,7 +60,10 @@ const run = async () => {
     logUserInput();
     logInsertWarningMessage();
 
-    await logResults(connection);
+    const populatedTables = await populateAllTables(connection);
+    const totalTableNames = await getTableNames(connection);
+
+    await logResults(populatedTables, totalTableNames);
 
     closeDbConnection(connection);
 }

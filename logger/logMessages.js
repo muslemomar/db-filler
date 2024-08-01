@@ -1,7 +1,5 @@
 import Log from "./index.js";
 import chalk from "chalk";
-import {populateAllTables} from "../database/populate.js";
-import {getTableNames} from "../database/queries.js";
 
 export const logUserInput = (dbType, databaseName, rowsToInsert) => {
     Log.info('\r');
@@ -17,9 +15,7 @@ export const logInsertWarningMessage = () => {
     Log.info('\r');
 }
 
-export const logResults = async (connection) => {
-    const populatedTables = await populateAllTables(connection);
-    const totalTableNames = await getTableNames(connection);
+export const logResults = async (populatedTables, totalTableNames) => {
     Log.info(chalk.bold('Populated Tables:'), `${chalk.green(populatedTables.join(', '))}`);
     Log.info(chalk.bold('Tables:'), `${chalk.green(populatedTables.length + ' populated,')}`, chalk.white(totalTableNames.length + ' total'))
     Log.info('\r');
