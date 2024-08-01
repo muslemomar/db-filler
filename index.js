@@ -1,9 +1,12 @@
+import chalk from 'chalk';
+
 import Log from './logger/index.js';
 import {promptInitialQuestions, promptSelectDatabase} from "./prompts/databasePrompts.js";
 import {closeDbConnection, connectToDb, useDatabase} from "./database/connect.js";
 import {getTableNames} from "./database/queries.js";
 import {populateAllTables} from "./database/populate.js";
 import {isDebugMode} from "./config/config.js";
+import {logInsertWarningMessage, logResults, logUserInput} from "./logger/logMessages.js";
 
 
 // TODO: add typescript
@@ -51,20 +54,12 @@ const run = async () => {
         await selectAndUseDatabase(connection);
     }
 
-    Log.info('You have selected:');
-    Log.info(`Database Type: ${dbType}`);
-    Log.info(`Database name: ${databaseName}`);
-    Log.info(`Rows to insert: ${rowsToInsert}`);
+    logUserInput();
+    logInsertWarningMessage();
 
-    const populatedTables = await populateAllTables(connection);
-    const totalTableNames = await getTableNames(connection);
+    await logResults(connection);
 
     closeDbConnection(connection);
-
-    Log.info('Populated tables:', populatedTables);
-    Log.info(`Populated ${populatedTables.length} out of ${totalTableNames.length} tables`);
-    Log.success('Database filled successfully! ✅️');
-
 }
 
-run().then(r => r).catch(e => Log.error(e.stack));
+run().catch(e => Log.error(e.stack));

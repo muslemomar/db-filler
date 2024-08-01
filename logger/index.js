@@ -13,4 +13,9 @@ export default class Log {
         console.log(chalk.red(...msgs));
     }
 
+    static warn(...msgs) {
+        console.log(chalk.bgYellow.yellowBright(...msgs));
+    }
+
 }
+

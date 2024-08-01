@@ -1,7 +1,9 @@
-import Log from "../logger/index.js";
 import pg from "pg";
 import mysql from "mysql2/promise";
-import {isDebugMode} from "../config/config.js";
+
+import Log from "../logger/index.js";
+
+const LOG_QUERIES = false;
 
 export const connectToDb = async (dbType, credentials) => {
 
@@ -13,7 +15,7 @@ export const connectToDb = async (dbType, credentials) => {
         await connection.connect()
     } else {
         connection = await mysql.createConnection(credentials);
-        if (isDebugMode) attachDbLogger(connection);
+        if (LOG_QUERIES) attachDbLogger(connection);
     }
 
     const originalQuery = connection.query;
@@ -23,6 +25,7 @@ export const connectToDb = async (dbType, credentials) => {
     }
 
     Log.success('Database connection established!');
+    Log.success('\r');
 
     return connection;
 }
