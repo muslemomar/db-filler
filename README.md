@@ -6,6 +6,8 @@
 - **Database Support** : Works with MySQL only (PostgreSQL support coming soon!)
  
 - **Random Realistic Data Generation** : Automatically populates tables with random, realistic data.
+
+- **Relation Tables**: Supports inserting data into relational tables.
  
 - **CLI Interface** : Simple command-line interface for easy use.
   
