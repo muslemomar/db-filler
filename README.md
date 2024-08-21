@@ -1,5 +1,5 @@
 
-# DB Filler 
+# 🪄 DB Filler 
 **DB Filler**  is a CLI tool designed to automate the process of filling a database with random data. Currently, it only supports MySQL.
 ## Features 
  
