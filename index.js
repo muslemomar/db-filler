@@ -28,12 +28,12 @@ const getDatabaseCredentials = async () => {
         * You can put your database credentials here if you want to run the script in debug mode.
         * */
         global.dbType = 'mysql';
-        global.databaseName = 'db_auto_filler';
+        global.databaseName = 'db_filler';
         global.rowsToInsert = Number(process.argv[2]) || 1;
         credentials.host = 'localhost';
         credentials.user = 'root';
         credentials.password = 'toor';
-        credentials.database = 'db_auto_filler';
+        credentials.database = 'db_filler';
     } else {
         const {databaseType, rowsToInsert, host, user, password} = await promptInitialQuestions();
         global.dbType = databaseType;
