@@ -1,6 +1,6 @@
 
 # 🪄 DB Filler 
-**DB Filler**  is a CLI tool designed to automate the process of filling a database with random data. Currently, it only supports MySQL.
+**DB Filler** DB Filler is a CLI tool designed to automate the process of filling a database with random realistic data. It automatically checks the schema of your tables to insert realistic data, including handling relational tables.
 ## Features 
  
 - **Database Support** : Works with MySQL only (PostgreSQL support coming soon!)
