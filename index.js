@@ -1,4 +1,4 @@
-import chalk from 'chalk';
+#!/usr/bin/env node
 
 import Log from './logger/index.js';
 import {promptInitialQuestions, promptSelectDatabase} from "./prompts/databasePrompts.js";
@@ -7,7 +7,6 @@ import {getTableNames} from "./database/queries.js";
 import {populateAllTables} from "./database/populate.js";
 import {isDebugMode} from "./config/config.js";
 import {logInsertWarningMessage, logResults, logUserInput} from "./logger/logMessages.js";
-
 
 // TODO: add typescript
 // TODO: Duplicate entry bug. Check articletags table.
@@ -43,7 +42,7 @@ const getDatabaseCredentials = async () => {
         credentials.password = password;
     }
 
-    global.isPostgreSQLDb = dbType === 'pg';
+    global.isPostgreSQLDb = dbType === 'postgresql';
 
     return credentials;
 }
@@ -57,7 +56,7 @@ const run = async () => {
         await selectAndUseDatabase(connection);
     }
 
-    logUserInput();
+    logUserInput(global.dbType, global.databaseName, global.rowsToInsert);
     logInsertWarningMessage();
 
     const populatedTables = await populateAllTables(connection);

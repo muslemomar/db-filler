@@ -1,12 +1,23 @@
 {
   "name": "db-filler",
   "version": "1.0.0",
-  "description": "",
+  "description": "A CLI tool for automatically filling a database with random data (like faker.js, but for databases).",
   "exports": "./index.js",
+  "homepage": "https://github.com/muslemomar/db-filler#readme",
+  "bin": "./index.js",
   "type": "module",
   "scripts": {},
-  "keywords": [],
-  "author": "Muslim Omar <mislimumer@gmail.com>",
+  "keywords": [
+    "database",
+    "db-filler",
+    "CLI",
+    "random-data",
+    "mysql",
+    "postgresql",
+    "database filler",
+    "database faker"
+  ],
+  "author": "Muslem Omar <mislimumer@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -15,5 +26,5 @@
     "mysql2": "^3.10.1",
     "pg": "^8.12.0"
   },
-  "repository": "git@github.com:muslemomar/db-auto-filler.git"
+  "repository": "git@github.com:muslemomar/db-filler.git"
 }

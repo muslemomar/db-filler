@@ -3,7 +3,18 @@ export const initialQuestions = [
         type: 'list',
         name: 'databaseType',
         message: 'What database do you want to use?',
-        choices: ['MySQL', 'PostgreSQL'],
+        choices: [
+            {
+                name: 'MySQL',
+                value: 'mysql',
+            },
+            {
+                name: 'PostgreSQL',
+                value: 'postgresql',
+                disabled: 'coming soon!'
+
+            }
+        ],
         filter(val) {
             return val.toLowerCase();
         },
