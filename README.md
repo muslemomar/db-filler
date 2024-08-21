@@ -27,6 +27,7 @@ npx db-filler
 3. **Specify Rows to Insert** : Define the number of rows to populate in each table.
 
 ### Example Output 
+![Untitled](https://github.com/user-attachments/assets/2e0e525d-cf06-49c5-b040-b2fe11ff5d83)
 
 
 ## License 
