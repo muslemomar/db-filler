@@ -9,7 +9,7 @@ import {isDebugMode} from "./config/config.js";
 import {logInsertWarningMessage, logResults, logUserInput} from "./logger/logMessages.js";
 
 // TODO: add typescript
-// TODO: Duplicate entry bug. Check articletags table.
+// TODO: Duplicate entry bug. Check articletags table. 
 // TODO (feature): validate column.
 
 const selectAndUseDatabase = async (connection) => {
